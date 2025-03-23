@@ -1,0 +1,178 @@
+{
+    "L1 Normalization": {
+        "Logistic Regression": {
+            "Accuracy": 0.433,
+            "Precision": 0.188,
+            "Recall": 0.433,
+            "F1 Score": 0.262
+        },
+        "K-Nearest Neighbors": {
+            "Accuracy": 0.533,
+            "Precision": 0.553,
+            "Recall": 0.533,
+            "F1 Score": 0.533
+        },
+        "Decision Tree": {
+            "Accuracy": 0.633,
+            "Precision": 0.649,
+            "Recall": 0.633,
+            "F1 Score": 0.635
+        },
+        "Random Forest": {
+            "Accuracy": 0.567,
+            "Precision": 0.563,
+            "Recall": 0.567,
+            "F1 Score": 0.564
+        },
+        "Gradient Boosting": {
+            "Accuracy": 0.533,
+            "Precision": 0.533,
+            "Recall": 0.533,
+            "F1 Score": 0.533
+        },
+        "Support Vector Machine": {
+            "Accuracy": 0.433,
+            "Precision": 0.188,
+            "Recall": 0.433,
+            "F1 Score": 0.262
+        },
+        "Naive Bayes": {
+            "Accuracy": 0.433,
+            "Precision": 0.446,
+            "Recall": 0.433,
+            "F1 Score": 0.435
+        }
+    },
+    "L2 Normalization": {
+        "Logistic Regression": {
+            "Accuracy": 0.433,
+            "Precision": 0.188,
+            "Recall": 0.433,
+            "F1 Score": 0.262
+        },
+        "K-Nearest Neighbors": {
+            "Accuracy": 0.567,
+            "Precision": 0.571,
+            "Recall": 0.567,
+            "F1 Score": 0.568
+        },
+        "Decision Tree": {
+            "Accuracy": 0.533,
+            "Precision": 0.553,
+            "Recall": 0.533,
+            "F1 Score": 0.533
+        },
+        "Random Forest": {
+            "Accuracy": 0.6,
+            "Precision": 0.6,
+            "Recall": 0.6,
+            "F1 Score": 0.6
+        },
+        "Gradient Boosting": {
+            "Accuracy": 0.667,
+            "Precision": 0.676,
+            "Recall": 0.667,
+            "F1 Score": 0.668
+        },
+        "Support Vector Machine": {
+            "Accuracy": 0.433,
+            "Precision": 0.188,
+            "Recall": 0.433,
+            "F1 Score": 0.262
+        },
+        "Naive Bayes": {
+            "Accuracy": 0.533,
+            "Precision": 0.533,
+            "Recall": 0.533,
+            "F1 Score": 0.533
+        }
+    },
+    "Min-Max Scaling": {
+        "Logistic Regression": {
+            "Accuracy": 0.567,
+            "Precision": 0.563,
+            "Recall": 0.567,
+            "F1 Score": 0.564
+        },
+        "K-Nearest Neighbors": {
+            "Accuracy": 0.567,
+            "Precision": 0.571,
+            "Recall": 0.567,
+            "F1 Score": 0.568
+        },
+        "Decision Tree": {
+            "Accuracy": 0.467,
+            "Precision": 0.484,
+            "Recall": 0.467,
+            "F1 Score": 0.467
+        },
+        "Random Forest": {
+            "Accuracy": 0.533,
+            "Precision": 0.553,
+            "Recall": 0.533,
+            "F1 Score": 0.533
+        },
+        "Gradient Boosting": {
+            "Accuracy": 0.5,
+            "Precision": 0.535,
+            "Recall": 0.5,
+            "F1 Score": 0.488
+        },
+        "Support Vector Machine": {
+            "Accuracy": 0.533,
+            "Precision": 0.533,
+            "Recall": 0.533,
+            "F1 Score": 0.533
+        },
+        "Naive Bayes": {
+            "Accuracy": 0.5,
+            "Precision": 0.485,
+            "Recall": 0.5,
+            "F1 Score": 0.488
+        }
+    },
+    "Standard Scaling": {
+        "Logistic Regression": {
+            "Accuracy": 0.567,
+            "Precision": 0.563,
+            "Recall": 0.567,
+            "F1 Score": 0.564
+        },
+        "K-Nearest Neighbors": {
+            "Accuracy": 0.567,
+            "Precision": 0.571,
+            "Recall": 0.567,
+            "F1 Score": 0.568
+        },
+        "Decision Tree": {
+            "Accuracy": 0.5,
+            "Precision": 0.535,
+            "Recall": 0.5,
+            "F1 Score": 0.488
+        },
+        "Random Forest": {
+            "Accuracy": 0.6,
+            "Precision": 0.609,
+            "Recall": 0.6,
+            "F1 Score": 0.602
+        },
+        "Gradient Boosting": {
+            "Accuracy": 0.5,
+            "Precision": 0.535,
+            "Recall": 0.5,
+            "F1 Score": 0.488
+        },
+        "Support Vector Machine": {
+            "Accuracy": 0.5,
+            "Precision": 0.504,
+            "Recall": 0.5,
+            "F1 Score": 0.502
+        },
+        "Naive Bayes": {
+            "Accuracy": 0.5,
+            "Precision": 0.485,
+            "Recall": 0.5,
+            "F1 Score": 0.488
+        }
+    }
+}
