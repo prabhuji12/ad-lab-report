@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Model Evaluation Results</h1>
+
+        <!-- Table 1: Model Performance -->
+        <h2>Performance Metrics</h2>
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Accuracy</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1 Score</th>
+            </tr>
+            {% for model, metrics in results.items() %}
+            <tr>
+                <td><strong>{{ model }}</strong></td>
+                <td>{{ metrics["Accuracy"] }}</td>
+                <td>{{ metrics["Precision"] }}</td>
+                <td>{{ metrics["Recall"] }}</td>
+                <td>{{ metrics["F1 Score"] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <!-- Table 2: Best Hyperparameters -->
+        <h2>Best Hyperparameters</h2>
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Hyperparameters</th>
+            </tr>
+            {% for model, params in best_models.items() %}
+            <tr>
+                <td><strong>{{ model }}</strong></td>
+                <td>
+                    <ul>
+                        {% for key, value in params.items() %}
+                            <li><strong>{{ key }}:</strong> {{ value }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <!-- Button to View Jupyter Notebook -->
+        <a href="{{ url_for('notebook') }}" class="notebook-btn">View Jupyter Notebook</a>
+    </div>
+</body>
+</html>

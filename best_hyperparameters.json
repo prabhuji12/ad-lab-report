@@ -1,0 +1,62 @@
+{
+    "Logistic Regression": {
+        "C": 1.0,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": null,
+        "max_iter": 100,
+        "multi_class": "deprecated",
+        "n_jobs": null,
+        "penalty": "l2",
+        "random_state": null,
+        "solver": "lbfgs",
+        "tol": 0.0001,
+        "verbose": 0,
+        "warm_start": false
+    },
+    "K-Nearest Neighbors": {
+        "algorithm": "auto",
+        "leaf_size": 30,
+        "metric": "minkowski",
+        "metric_params": null,
+        "n_jobs": null,
+        "n_neighbors": 5,
+        "p": 2,
+        "weights": "uniform"
+    },
+    "Decision Tree": {
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": null,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "random_state": null,
+        "splitter": "best"
+    },
+    "Random Forest": {
+        "criterion": "entropy",
+        "max_depth": 5,
+        "n_estimators": 200
+    },
+    "Gradient Boosting": {
+        "learning_rate": 0.01,
+        "max_depth": 5,
+        "n_estimators": 100
+    },
+    "Support Vector Machine": {
+        "C": 1,
+        "kernel": "linear"
+    },
+    "Naive Bayes": {
+        "priors": null,
+        "var_smoothing": 1e-09
+    }
+}

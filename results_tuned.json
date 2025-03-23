@@ -1,0 +1,51 @@
+{
+    "Logistic Regression": {
+        "Accuracy": 0.567,
+        "Precision": 0.563,
+        "Recall": 0.567,
+        "F1 Score": 0.564,
+        "Cross-Validation Accuracy (10-Fold)": 0.518
+    },
+    "K-Nearest Neighbors": {
+        "Accuracy": 0.5,
+        "Precision": 0.513,
+        "Recall": 0.5,
+        "F1 Score": 0.502,
+        "Cross-Validation Accuracy (10-Fold)": 0.476
+    },
+    "Decision Tree": {
+        "Accuracy": 0.433,
+        "Precision": 0.446,
+        "Recall": 0.433,
+        "F1 Score": 0.435,
+        "Cross-Validation Accuracy (10-Fold)": 0.465
+    },
+    "Random Forest": {
+        "Accuracy": 0.433,
+        "Precision": 0.446,
+        "Recall": 0.433,
+        "F1 Score": 0.435,
+        "Cross-Validation Accuracy (10-Fold)": 0.476
+    },
+    "Gradient Boosting": {
+        "Accuracy": 0.6,
+        "Precision": 0.622,
+        "Recall": 0.6,
+        "F1 Score": 0.6,
+        "Cross-Validation Accuracy (10-Fold)": 0.535
+    },
+    "Support Vector Machine": {
+        "Accuracy": 0.5,
+        "Precision": 0.472,
+        "Recall": 0.5,
+        "F1 Score": 0.473,
+        "Cross-Validation Accuracy (10-Fold)": 0.571
+    },
+    "Naive Bayes": {
+        "Accuracy": 0.5,
+        "Precision": 0.485,
+        "Recall": 0.5,
+        "F1 Score": 0.488,
+        "Cross-Validation Accuracy (10-Fold)": 0.512
+    }
+}
