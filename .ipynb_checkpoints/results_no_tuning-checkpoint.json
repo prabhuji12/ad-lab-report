@@ -12,22 +12,22 @@
         "F1 Score": 0.502
     },
     "Decision Tree": {
-        "Accuracy": 0.5,
-        "Precision": 0.523,
-        "Recall": 0.5,
-        "F1 Score": 0.497
+        "Accuracy": 0.433,
+        "Precision": 0.446,
+        "Recall": 0.433,
+        "F1 Score": 0.435
     },
     "Random Forest": {
-        "Accuracy": 0.5,
-        "Precision": 0.513,
-        "Recall": 0.5,
-        "F1 Score": 0.502
-    },
-    "Gradient Boosting": {
         "Accuracy": 0.533,
         "Precision": 0.542,
         "Recall": 0.533,
         "F1 Score": 0.535
+    },
+    "Gradient Boosting": {
+        "Accuracy": 0.5,
+        "Precision": 0.535,
+        "Recall": 0.5,
+        "F1 Score": 0.488
     },
     "Support Vector Machine": {
         "Accuracy": 0.467,
