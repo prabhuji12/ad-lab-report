@@ -13,15 +13,15 @@
     },
     "Decision Tree": {
         "Accuracy": 0.433,
-        "Precision": 0.452,
+        "Precision": 0.446,
         "Recall": 0.433,
-        "F1 Score": 0.43
+        "F1 Score": 0.435
     },
     "Random Forest": {
-        "Accuracy": 0.567,
-        "Precision": 0.581,
-        "Recall": 0.567,
-        "F1 Score": 0.568
+        "Accuracy": 0.6,
+        "Precision": 0.609,
+        "Recall": 0.6,
+        "F1 Score": 0.602
     },
     "Gradient Boosting": {
         "Accuracy": 0.5,

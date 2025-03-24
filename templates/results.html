@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Model Evaluation Results</h1>
+
+        <!-- Table 1: Model Performance before tuning-->
+        <h2>Performance Metrics before hyper-parameter tuning</h2>
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Accuracy</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1 Score</th>
+            </tr>
+            {% for model, metrics in results_no_tuning.items() %}
+            <tr>
+                <td><strong>{{ model }}</strong></td>
+                <td>{{ metrics["Accuracy"] }}</td>
+                <td>{{ metrics["Precision"] }}</td>
+                <td>{{ metrics["Recall"] }}</td>
+                <td>{{ metrics["F1 Score"] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <!-- Table 2: Model Performance after preprocessing-->
+        <h2>Performance Metrics after Preprocessing</h2>
+        <table>
+            <tr>
+                <th>Preprocessing Method</th>
+                <th>Model</th>
+                <th>Accuracy</th>
+                <th>Precision</th>
+                <th>Recall</th> 
+                <th>F1 Score</th>
+            </tr>
+            {% for preprocessing, models in results_preprocessing.items() %}
+                {% set row_span = models|length %}
+                {% for model, metrics in models.items() %}
+                <tr>
+                    {% if loop.first %}
+                    <td rowspan="{{ row_span }}"><strong>{{ preprocessing }}</strong></td>
+                    {% endif %}
+                    <td><strong>{{ model }}</strong></td>
+                    <td>{{ metrics["Accuracy"] }}</td>
+                    <td>{{ metrics["Precision"] }}</td>
+                    <td>{{ metrics["Recall"] }}</td>
+                    <td>{{ metrics["F1 Score"] }}</td>
+                </tr>
+                {% endfor %}
+            {% endfor %}
+        </table>
+
+        <!-- Table 3: Model Performance after hyper-parameter tuning-->
+        <h2>Performance Metrics after hyper-parameter tuning</h2>
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Accuracy</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1 Score</th>
+            </tr>
+            {% for model, metrics in results_tuned.items() %}
+            <tr>
+                <td><strong>{{ model }}</strong></td>
+                <td>{{ metrics["Accuracy"] }}</td>
+                <td>{{ metrics["Precision"] }}</td>
+                <td>{{ metrics["Recall"] }}</td>
+                <td>{{ metrics["F1 Score"] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <!-- Table 4: Model Performance after PCA-->
+        <h2>Performance Metrics after PCA</h2>
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Accuracy</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1 Score</th>
+            </tr>
+            {% for model, metrics in results_pca.items() %}
+            <tr>
+                <td><strong>{{ model }}</strong></td>
+                <td>{{ metrics["Accuracy"] }}</td>
+                <td>{{ metrics["Precision"] }}</td>
+                <td>{{ metrics["Recall"] }}</td>
+                <td>{{ metrics["F1 Score"] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+
+        <!-- Table 5: Best Hyperparameters -->
+        <h2>Best Hyperparameters</h2>
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Hyperparameters</th>
+            </tr>
+            {% for model, params in best_models.items() %}
+            <tr>
+                <td><strong>{{ model }}</strong></td>
+                <td>
+                    <ul>
+                        {% for key, value in params.items() %}
+                            <li><strong>{{ key }}:</strong> {{ value }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <!-- Button to View Jupyter Notebook -->
+        
+    </div>
+</body>
+</html>

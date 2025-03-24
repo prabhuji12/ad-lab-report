@@ -14,18 +14,18 @@
         "Cross-Validation Accuracy (10-Fold)": 0.476
     },
     "Decision Tree": {
-        "Accuracy": 0.467,
-        "Precision": 0.484,
-        "Recall": 0.467,
-        "F1 Score": 0.467,
-        "Cross-Validation Accuracy (10-Fold)": 0.453
+        "Accuracy": 0.433,
+        "Precision": 0.452,
+        "Recall": 0.433,
+        "F1 Score": 0.43,
+        "Cross-Validation Accuracy (10-Fold)": 0.488
     },
     "Random Forest": {
-        "Accuracy": 0.6,
-        "Precision": 0.609,
-        "Recall": 0.6,
-        "F1 Score": 0.602,
-        "Cross-Validation Accuracy (10-Fold)": 0.518
+        "Accuracy": 0.567,
+        "Precision": 0.594,
+        "Recall": 0.567,
+        "F1 Score": 0.564,
+        "Cross-Validation Accuracy (10-Fold)": 0.459
     },
     "Gradient Boosting": {
         "Accuracy": 0.6,

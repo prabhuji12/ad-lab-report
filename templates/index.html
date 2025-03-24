@@ -1,131 +1,128 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Predictions</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <h1>Predict using Machine Learning Models</h1>
+
+    <a href="{{ url_for('notebook') }}" class="notebook-btn">View Jupyter Notebook</a>
+    <a href="{{ url_for('results') }}" class="notebook-btn">View model results</a>
+    
+    <h2>Enter Inputs for Prediction</h2>
+    <div class="container">
+        <form id="predictionForm">
+            <label for="modelSelect">Select Model:</label>
+            <select id="modelSelect">
+                {% for model in model_names %}
+                    <option value="{{ model }}">{{ model }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="inputData">Enter Features (comma-separated):</label>
+            <input type="text" id="inputData" name="inputData" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <h3>Prediction Result:</h3>
+        <p id="predictionResult">Waiting for input...</p>
+
+        <script>
+            document.getElementById("predictionForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+                let modelName = document.getElementById("modelSelect").value;
+                let inputData = document.getElementById("inputData").value;
+
+                fetch("/predict", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        "model": modelName,
+                        "features": inputData
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        document.getElementById("predictionResult").textContent = "Error: " + data.error;
+                    } else {
+                        document.getElementById("predictionResult").textContent = "Predicted Class: " + data.prediction;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById("predictionResult").textContent = "Error in prediction.";
+                });
+            });
+        </script>
+    </div>
+</body>
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Model Results</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Accident Survival Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">   
 </head>
 <body>
+    <h1>Predict using Machine Learning Models</h1>
+
+    <a href="{{ url_for('notebook') }}" class="notebook-btn">View Jupyter Notebook</a>
+    <a href="{{ url_for('results') }}" class="notebook-btn">View model results</a>
+
+    <h2>Enter Accident Details for Prediction</h2>
     <div class="container">
-        <h1>Model Evaluation Results</h1>
-        <a href="{{ url_for('notebook') }}" class="notebook-btn">View Jupyter Notebook</a>
-
-        <!-- Table 1: Model Performance before tuning-->
-        <h2>Performance Metrics before hyper-parameter tuning</h2>
-        <table>
-            <tr>
-                <th>Model</th>
-                <th>Accuracy</th>
-                <th>Precision</th>
-                <th>Recall</th>
-                <th>F1 Score</th>
-            </tr>
-            {% for model, metrics in results_no_tuning.items() %}
-            <tr>
-                <td><strong>{{ model }}</strong></td>
-                <td>{{ metrics["Accuracy"] }}</td>
-                <td>{{ metrics["Precision"] }}</td>
-                <td>{{ metrics["Recall"] }}</td>
-                <td>{{ metrics["F1 Score"] }}</td>
-            </tr>
+        <form action="/predict" method="post">
+            <label for="model">Select Model:</label>
+        <select id="model" name="model">
+            {% for model_name in model_names %}
+                <option value="{{ model_name }}">{{ model_name }}</option>
             {% endfor %}
-        </table>
+        </select>
+        <br><br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br><br>
 
-        <!-- Table 2: Model Performance after preprocessing-->
-        <h2>Performance Metrics after Preprocessing</h2>
-        <table>
-            <tr>
-                <th>Preprocessing Method</th>
-                <th>Model</th>
-                <th>Accuracy</th>
-                <th>Precision</th>
-                <th>Recall</th> 
-                <th>F1 Score</th>
-            </tr>
-            {% for preprocessing, models in results_preprocessing.items() %}
-                {% set row_span = models|length %}
-                {% for model, metrics in models.items() %}
-                <tr>
-                    {% if loop.first %}
-                    <td rowspan="{{ row_span }}"><strong>{{ preprocessing }}</strong></td>
-                    {% endif %}
-                    <td><strong>{{ model }}</strong></td>
-                    <td>{{ metrics["Accuracy"] }}</td>
-                    <td>{{ metrics["Precision"] }}</td>
-                    <td>{{ metrics["Recall"] }}</td>
-                    <td>{{ metrics["F1 Score"] }}</td>
-                </tr>
-                {% endfor %}
-            {% endfor %}
-        </table>
+            <label for="gender">Gender (0 = Female, 1 = Male):</label>
+            <input type="number" id="gender" name="gender" min="0" max="1" required><br><br>
 
-        <!-- Table 3: Model Performance after hyper-parameter tuning-->
-        <h2>Performance Metrics after hyper-parameter tuning</h2>
-        <table>
-            <tr>
-                <th>Model</th>
-                <th>Accuracy</th>
-                <th>Precision</th>
-                <th>Recall</th>
-                <th>F1 Score</th>
-            </tr>
-            {% for model, metrics in results_tuned.items() %}
-            <tr>
-                <td><strong>{{ model }}</strong></td>
-                <td>{{ metrics["Accuracy"] }}</td>
-                <td>{{ metrics["Precision"] }}</td>
-                <td>{{ metrics["Recall"] }}</td>
-                <td>{{ metrics["F1 Score"] }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+            <label for="speed">Speed of Impact (km/h):</label>
+            <input type="number" id="speed" name="speed" required><br><br>
 
-        <!-- Table 4: Model Performance after PCA-->
-        <h2>Performance Metrics after PCA</h2>
-        <table>
-            <tr>
-                <th>Model</th>
-                <th>Accuracy</th>
-                <th>Precision</th>
-                <th>Recall</th>
-                <th>F1 Score</th>
-            </tr>
-            {% for model, metrics in results_pca.items() %}
-            <tr>
-                <td><strong>{{ model }}</strong></td>
-                <td>{{ metrics["Accuracy"] }}</td>
-                <td>{{ metrics["Precision"] }}</td>
-                <td>{{ metrics["Recall"] }}</td>
-                <td>{{ metrics["F1 Score"] }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+            <label for="helmet">Helmet Used (0 = No, 1 = Yes):</label>
+            <input type="number" id="helmet" name="helmet" min="0" max="1" required><br><br>
 
+            <label for="seatbelt">Seatbelt Used (0 = No, 1 = Yes):</label>
+            <input type="number" id="seatbelt" name="seatbelt" min="0" max="1" required><br><br>
 
-        <!-- Table 5: Best Hyperparameters -->
-        <h2>Best Hyperparameters</h2>
-        <table>
-            <tr>
-                <th>Model</th>
-                <th>Hyperparameters</th>
-            </tr>
-            {% for model, params in best_models.items() %}
-            <tr>
-                <td><strong>{{ model }}</strong></td>
-                <td>
-                    <ul>
-                        {% for key, value in params.items() %}
-                            <li><strong>{{ key }}:</strong> {{ value }}</li>
-                        {% endfor %}
-                    </ul>
-                </td>
-            </tr>
-            {% endfor %}
-        </table>
-
-        <!-- Button to View Jupyter Notebook -->
-        
+            <button type="submit">Predict</button>
+        </form>
+        <br>
     </div>
+    
+    <div class="container">
+    {% if prediction is not none %}
+    <h2>Prediction Result</h2>
+    <p>Predicted Outcome: 
+        <strong>
+            {% if prediction == 1 %}
+                Survived
+            {% elif prediction == 0 %}
+                Did Not Survive
+            {% endif %}
+        </strong>
+    </p>
+    {% endif %}
+    </div>
+
 </body>
 </html>

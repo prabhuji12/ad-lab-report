@@ -13,22 +13,22 @@
             "F1 Score": 0.533
         },
         "Decision Tree": {
-            "Accuracy": 0.633,
-            "Precision": 0.649,
-            "Recall": 0.633,
-            "F1 Score": 0.635
+            "Accuracy": 0.567,
+            "Precision": 0.581,
+            "Recall": 0.567,
+            "F1 Score": 0.568
         },
         "Random Forest": {
-            "Accuracy": 0.567,
-            "Precision": 0.563,
-            "Recall": 0.567,
-            "F1 Score": 0.564
+            "Accuracy": 0.6,
+            "Precision": 0.594,
+            "Recall": 0.6,
+            "F1 Score": 0.594
         },
         "Gradient Boosting": {
-            "Accuracy": 0.533,
-            "Precision": 0.533,
-            "Recall": 0.533,
-            "F1 Score": 0.533
+            "Accuracy": 0.5,
+            "Precision": 0.495,
+            "Recall": 0.5,
+            "F1 Score": 0.497
         },
         "Support Vector Machine": {
             "Accuracy": 0.433,
@@ -63,10 +63,10 @@
             "F1 Score": 0.533
         },
         "Random Forest": {
-            "Accuracy": 0.6,
-            "Precision": 0.6,
-            "Recall": 0.6,
-            "F1 Score": 0.6
+            "Accuracy": 0.633,
+            "Precision": 0.637,
+            "Recall": 0.633,
+            "F1 Score": 0.635
         },
         "Gradient Boosting": {
             "Accuracy": 0.667,
@@ -101,16 +101,16 @@
             "F1 Score": 0.568
         },
         "Decision Tree": {
-            "Accuracy": 0.467,
-            "Precision": 0.484,
-            "Recall": 0.467,
-            "F1 Score": 0.467
+            "Accuracy": 0.5,
+            "Precision": 0.523,
+            "Recall": 0.5,
+            "F1 Score": 0.497
         },
         "Random Forest": {
-            "Accuracy": 0.533,
-            "Precision": 0.553,
-            "Recall": 0.533,
-            "F1 Score": 0.533
+            "Accuracy": 0.567,
+            "Precision": 0.581,
+            "Recall": 0.567,
+            "F1 Score": 0.568
         },
         "Gradient Boosting": {
             "Accuracy": 0.5,
@@ -146,15 +146,15 @@
         },
         "Decision Tree": {
             "Accuracy": 0.5,
-            "Precision": 0.535,
+            "Precision": 0.523,
             "Recall": 0.5,
-            "F1 Score": 0.488
+            "F1 Score": 0.497
         },
         "Random Forest": {
-            "Accuracy": 0.6,
-            "Precision": 0.609,
-            "Recall": 0.6,
-            "F1 Score": 0.602
+            "Accuracy": 0.567,
+            "Precision": 0.581,
+            "Recall": 0.567,
+            "F1 Score": 0.568
         },
         "Gradient Boosting": {
             "Accuracy": 0.5,
